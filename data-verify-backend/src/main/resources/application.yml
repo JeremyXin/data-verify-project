@@ -1,0 +1,33 @@
+#[app]
+spring:
+  profiles:
+    active: local
+  application:
+    name: data-verify
+
+# [management]
+management: # spring boot actuator 相关配置，如无特殊需求，无需更改
+  server:
+    port: 1101
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+#[web server]
+server:
+  port: 80
+  servlet:
+    context-path: /data-verify                 # 项目 URL 基础路径
+    application-display-name: ${spring.application.name}
+
+
+#[logging]
+logging:
+  level:
+    root: info                           # 日志级别
+    com.netease.mail: info               # 日志级别
+  logger:
+    app: com.data.verify                # 需要打印在 webapp.log 中的日志包名
+
+
+

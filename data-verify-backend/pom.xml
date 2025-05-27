@@ -2,19 +2,29 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.7.3</version>
-    <relativePath/> <!-- lookup parent from repository -->
+    <groupId>com.jeremyxin.dataverify</groupId>
+    <artifactId>data-verify-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
-  <groupId>com.jeremyxin.dataverify</groupId>
   <artifactId>data-verify-backend</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <name>data-verify-backend</name>
   <description>Spring Boot 2.7.3 backend module for data verify project</description>
   <properties>
     <java.version>1.8</java.version>
+    <mybatis-plus.version>3.5.2</mybatis-plus.version>
   </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.3</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -30,6 +40,11 @@
       <artifactId>junit</artifactId>
       <version>4.13.2</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <version>${mybatis-plus.version}</version>
     </dependency>
   </dependencies>
   <build>

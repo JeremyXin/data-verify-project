@@ -1,4 +1,4 @@
-package com.jeremyxin.dataverify;
+package $com.jeremyxin.dataverify;
 
 /**
  * Hello world!
